@@ -30,6 +30,7 @@ const propTypes = {
     optionTextStyle: Text.propTypes.style,
     sectionStyle: View.propTypes.style,
     sectionTextStyle: Text.propTypes.style,
+    cancelContainerStyle: View.propTypes.style,
     cancelStyle: View.propTypes.style,
     cancelTextStyle: Text.propTypes.style,
     overlayStyle: View.propTypes.style,
@@ -47,6 +48,7 @@ const defaultProps = {
     optionTextStyle: {},
     sectionStyle: {},
     sectionTextStyle: {},
+    cancelContainerStyle: {},
     cancelStyle: {},
     cancelTextStyle: {},
     overlayStyle: {},
@@ -139,7 +141,7 @@ export default class ModalPicker extends BaseComponent {
                         </View>
                     </ScrollView>
                 </View>
-                <View style={styles.cancelContainer}>
+                <View style={[styles.cancelContainer, this.props.cancelContainerStyle]}>
                     <TouchableOpacity onPress={this.close}>
                         <View style={[styles.cancelStyle, this.props.cancelStyle]}>
                             <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
